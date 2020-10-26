@@ -1,10 +1,16 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from 'lib/constants'
 import { ReactElement } from 'react'
 
 export default function Meta(): ReactElement {
   return (
     <Head>
+      <meta
+        name="description"
+        content="Check out my personal website. There is not a lot, but very useful and nice!"
+      />
+
+      <meta property="og:image" content="/og-image.png" />
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -33,11 +39,6 @@ export default function Meta(): ReactElement {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
-      />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   )
 }

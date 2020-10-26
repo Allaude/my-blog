@@ -2,7 +2,6 @@ import Layout from 'components/modules/Layout/Layout'
 import Head from 'next/head'
 import { ReactElement } from 'react'
 
-import { CMS_NAME } from 'lib/constants'
 import Link from 'next/link'
 
 type HomeTemplateProps = {
@@ -16,7 +15,7 @@ export default function HomeTemplate({
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Blog | {CMS_NAME}</title>
+          <title>Lorenzo GM</title>
         </Head>
 
         <div className="container mx-auto mt-20 px-20 flex justify-center">

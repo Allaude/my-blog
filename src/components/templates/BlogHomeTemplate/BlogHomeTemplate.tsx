@@ -5,8 +5,6 @@ import Head from 'next/head'
 import { ReactElement } from 'react'
 import { PostParsed } from 'services/contentful/post/postParser'
 
-import { CMS_NAME } from 'lib/constants'
-
 type BlogHomePageProps = {
   preview: boolean
   allPosts: PostParsed[]
@@ -23,7 +21,7 @@ export default function BlogHomePage({
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Blog | {CMS_NAME}</title>
+          <title>Blog | Lorenzo GM</title>
         </Head>
         {heroPost && (
           <HeroPost
