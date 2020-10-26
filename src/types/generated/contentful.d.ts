@@ -5,10 +5,10 @@ import { Document } from '@contentful/rich-text-types'
 
 export interface IAuthorFields {
   /** name */
-  name?: string | undefined
+  name: string
 
   /** picture */
-  picture?: Asset | undefined
+  picture: Asset
 }
 
 export interface IAuthor extends Entry<IAuthorFields> {
@@ -30,25 +30,25 @@ export interface IAuthor extends Entry<IAuthorFields> {
 
 export interface IPostFields {
   /** title */
-  title?: string | undefined
+  title: string
 
   /** content */
-  content?: Document | undefined
+  content: Document
 
   /** excerpt */
-  excerpt?: string | undefined
+  excerpt: string
 
   /** coverImage */
-  coverImage?: Asset | undefined
+  coverImage: Asset
 
   /** date */
-  date?: string | undefined
+  date: string
 
   /** slug */
-  slug?: string | undefined
+  slug: string
 
   /** author */
-  author?: Entry<{ [fieldId: string]: unknown }> | undefined
+  author: Entry<{ [fieldId: string]: unknown }>
 }
 
 export interface IPost extends Entry<IPostFields> {
@@ -70,6 +70,6 @@ export interface IPost extends Entry<IPostFields> {
 
 export type CONTENT_TYPE = 'author' | 'post'
 
-export type LOCALE_CODE = 'en-US'
+export type LOCALE_CODE = 'en-US' | 'es'
 
 export type CONTENTFUL_DEFAULT_LOCALE_CODE = 'en-US'

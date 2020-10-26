@@ -18,9 +18,14 @@ export default function HomeTemplate({
           <title>Lorenzo GM</title>
         </Head>
 
-        <div className="container mx-auto mt-20 px-20 flex justify-center">
-          <div className="mr-20 mt-5">
-            <p className="text-4xl">Hello! I'm Lorenzo GM.</p>
+        <div className="container mx-auto mt-20 flex flex-col justify-center items-center lg:flex-row-reverse lg:px-20 ">
+          <img
+            src="/lorenzogm-square.jpg"
+            alt="Lorenzo GM"
+            className="rounded-full w-48"
+          />
+          <div className="mt-5 text-center lg:text-left lg:mr-20">
+            <p className="text-4xl">Hello! I&apos;m Lorenzo GM.</p>
             <p className="text-2xl">I make stuff with code.</p>
             <div className="mt-6">
               <Link href="/blog">
@@ -33,11 +38,6 @@ export default function HomeTemplate({
               </Link>
             </div>
           </div>
-          <img
-            src="/lorenzogm-square.jpg"
-            alt="Lorenzo GM"
-            className="rounded-full w-48"
-          />
         </div>
       </Layout>
     </>

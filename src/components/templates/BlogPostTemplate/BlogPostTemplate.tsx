@@ -1,16 +1,15 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import ErrorPage from 'next/error'
-import Container from 'components/foundations/PageContainer/PageContainer'
-import PostBody from 'components/post-body'
-import MoreStories from 'components/more-stories'
-import Header from 'components/header'
-import PostHeader from 'components/post-header'
+import { ReactElement } from 'react'
+
+import PostBody from 'components/modules/PostBody/PostBody'
+import PostMoreEntries from 'components/modules/PostMoreEntries/PostMoreEntries'
+import PostHeader from 'components/modules/PostHeader/PostHeader'
 import SectionSeparator from 'components/section-separator'
 import Layout from 'components/modules/Layout/Layout'
-import PostTitle from 'components/post-title'
+import PostTitle from 'components/elements/PostTitle/PostTitle'
 import { PostParsed } from 'services/contentful/post/postParser'
-import { ReactElement } from 'react'
 
 type BlogPostPageProps = {
   preview: boolean
@@ -40,17 +39,12 @@ export default function BlogPostTemplate({
               <title>{post.title} | Lorenzo GM</title>
               <meta property="og:image" content={post.coverImage.url} />
             </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={post.content} />
+            <PostHeader post={post} />
+            <PostBody post={post} />
           </article>
           <SectionSeparator />
           {morePosts && morePosts.length > 0 && (
-            <MoreStories posts={morePosts} />
+            <PostMoreEntries posts={morePosts} />
           )}
         </>
       )}

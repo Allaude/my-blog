@@ -2,11 +2,14 @@ import Container from 'components/foundations/PageContainer/PageContainer'
 import cn from 'classnames'
 import { ReactElement } from 'react'
 
-export default function Alert({ preview }): ReactElement | null {
+type AlertProps = {
+  preview: boolean
+}
+export default function Alert({ preview }: AlertProps): ReactElement | null {
   return preview ? (
     <div
       className={cn('border-b', {
-        'bg-accent-7 border-accent-7 text-white': preview,
+        'bg-accent-7 border-accent-7 text-white': !!preview,
         'bg-accent-1 border-accent-2': !preview,
       })}
     >

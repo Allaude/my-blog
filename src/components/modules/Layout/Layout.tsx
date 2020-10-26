@@ -1,7 +1,8 @@
-import Alert from 'components/alert'
-import Container from 'components/foundations/PageContainer/PageContainer'
-import Meta from 'components/meta'
 import { ReactElement, ReactNode } from 'react'
+
+import Alert from 'components/elements/Alert/Alert'
+import PageContainer from 'components/foundations/PageContainer/PageContainer'
+import Meta from 'components/modules/Layout/Meta'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -20,9 +21,9 @@ export default function Layout({
       <div className="min-h-screen">
         <Alert preview={preview} />
         <Header />
-        <Container>
+        <PageContainer>
           <main>{children}</main>
-        </Container>
+        </PageContainer>
       </div>
       <Footer />
     </>

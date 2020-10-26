@@ -1,8 +1,9 @@
-import MoreStories from 'components/more-stories'
-import HeroPost from 'components/hero-post'
-import Layout from 'components/modules/Layout/Layout'
-import Head from 'next/head'
 import { ReactElement } from 'react'
+import Head from 'next/head'
+
+import PostMoreEntries from 'components/modules/PostMoreEntries/PostMoreEntries'
+import PostHero from 'components/modules/PostHero/PostHero'
+import Layout from 'components/modules/Layout/Layout'
 import { PostParsed } from 'services/contentful/post/postParser'
 
 type BlogHomePageProps = {
@@ -14,8 +15,7 @@ export default function BlogHomePage({
   preview,
   allPosts,
 }: BlogHomePageProps): ReactElement {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const [postHero, ...postMoreEntries] = allPosts
 
   return (
     <>
@@ -23,17 +23,10 @@ export default function BlogHomePage({
         <Head>
           <title>Blog | Lorenzo GM</title>
         </Head>
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
+        {postHero && <PostHero post={postHero} />}
+        {postMoreEntries.length > 0 && (
+          <PostMoreEntries posts={postMoreEntries} />
         )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Layout>
     </>
   )

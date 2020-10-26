@@ -2,11 +2,26 @@
   "name": "cms-contentful",
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "husky install",
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint ./src --ext .js,.jsx,.tsx,.ts",
     "setup": "node ./contentful/setup.js $CONTENTFUL_SPACE_ID $CONTENTFUL_MANAGEMENT_TOKEN",
     "types": "contentful-typescript-codegen --output src/types/generated/contentful.d.ts"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "yarn lint"
+    ],
+    "cypress/**/*.{js,ts,tsx}": [
+      "yarn lint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npx tsc"
+    }
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "13.4.0",
@@ -42,6 +57,8 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-plugin-testing-library": "^3.9.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
     "tailwindcss": "^1.2.0",

@@ -1,7 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+
 import BlogPostTemplate from 'components/templates/BlogPostTemplate/BlogPostTemplate'
-import getAllPostsWithSlug from 'services/contentful/post/getAllPostsWithSlug'
 import getPostAndMorePosts from 'services/contentful/post/getPostAndMorePosts'
+import { IPostFields } from 'types/generated/contentful'
+import getClient from 'services/contentful/contentful'
+import { EntryCollection } from 'contentful'
 
 export default BlogPostTemplate
 
@@ -9,7 +12,7 @@ export const getStaticProps: GetStaticProps = async ({
   params,
   preview = false,
 }) => {
-  const data = await getPostAndMorePosts(params?.slug, preview)
+  const data = await getPostAndMorePosts(params?.slug as string, preview)
 
   return {
     props: {
@@ -21,10 +24,15 @@ export const getStaticProps: GetStaticProps = async ({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allPosts = await getAllPostsWithSlug()
+  const entries: EntryCollection<Pick<IPostFields, 'slug'>> = await getClient(
+    false,
+  ).getEntries({
+    content_type: 'post',
+    select: 'fields.slug',
+  })
 
   return {
-    paths: allPosts.map(({ slug }) => `/blog/${slug}`) ?? [],
+    paths: entries.items.map(({ fields }) => `/blog/${fields.slug}`) ?? [],
     fallback: true,
   }
 }

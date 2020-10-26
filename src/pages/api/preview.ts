@@ -1,6 +1,10 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import getPreviewPostBySlug from 'services/contentful/post/getPreviewPostBySlug'
 
-export default async function preview(req, res) {
+export default async function preview(
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> {
   const { secret, slug } = req.query
 
   if (secret !== process.env.CONTENTFUL_PREVIEW_SECRET || !slug) {
@@ -8,7 +12,7 @@ export default async function preview(req, res) {
   }
 
   // Fetch the headless CMS to check if the provided `slug` exists
-  const post = await getPreviewPostBySlug(slug)
+  const post = await getPreviewPostBySlug(slug as string)
 
   // If the slug doesn't exist prevent preview mode from being enabled
   if (!post) {
@@ -27,5 +31,5 @@ export default async function preview(req, res) {
     <script>window.location.href = '${url}'</script>
     </head>`,
   )
-  res.end()
+  return res.end()
 }
