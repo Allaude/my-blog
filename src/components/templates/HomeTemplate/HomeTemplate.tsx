@@ -15,7 +15,7 @@ export default function HomeTemplate({
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Lorenzo GM</title>
+          <title>Muhamad Riyan</title>
         </Head>
 
         <div className="container mx-auto mt-20 flex flex-col justify-center items-center lg:flex-row-reverse lg:px-20 ">
@@ -25,7 +25,7 @@ export default function HomeTemplate({
             className="rounded-full w-48"
           />
           <div className="mt-5 text-center lg:text-left lg:mr-20">
-            <p className="text-4xl">Hello! I&apos;m Lorenzo GM.</p>
+            <p className="text-4xl">Hello! I&apos;m Muhamad Riyan</p>
             <p className="text-2xl">I make stuff with code.</p>
             <div className="mt-6">
               <Link href="/blog">

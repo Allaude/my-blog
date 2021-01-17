@@ -36,7 +36,7 @@ export default function BlogPostTemplate({
         <>
           <article>
             <Head>
-              <title>{post.title} | Lorenzo GM</title>
+              <title>{post.title} | Muhamad Riyan</title>
               <meta property="og:image" content={post.coverImage.url} />
             </Head>
             <PostHeader post={post} />
