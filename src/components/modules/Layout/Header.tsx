@@ -8,7 +8,7 @@ export default function Header(): ReactElement {
     <Container>
       <header className="flex flex-col lg:flex-row justify-between items-center py-6">
         <Link href="/">
-          <a className="font-bold text-4xl">Lorenzo GM</a>
+          <a className="font-bold text-4xl">Muhamad Riyan</a>
         </Link>
         <Navigation />
       </header>

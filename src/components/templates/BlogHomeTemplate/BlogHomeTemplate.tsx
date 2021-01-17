@@ -21,7 +21,7 @@ export default function BlogHomePage({
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Blog | Lorenzo GM</title>
+          <title>Blog | Muhamad Riyan</title>
         </Head>
         {postHero && <PostHero post={postHero} />}
         {postMoreEntries.length > 0 && (
