@@ -20,9 +20,9 @@ export default function HomeTemplate({
 
         <div className="container mx-auto mt-20 flex flex-col justify-center items-center lg:flex-row-reverse lg:px-20 ">
           <img
-            src="/lorenzogm-square.jpg"
+            src="/samping.png"
             alt="Lorenzo GM"
-            className="rounded-full w-48"
+            className="square-full w-48"
           />
           <div className="mt-5 text-center lg:text-left lg:mr-20">
             <p className="text-4xl">Hello! I&apos;m Muhamad Riyan</p>

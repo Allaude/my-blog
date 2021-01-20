@@ -9,10 +9,10 @@ export default function Navigation(): ReactElement {
           <Link href="/blog">Blog</Link>
         </li>
         <li>
-          <a href="https://github.com/lorenzogm">Github</a>
+          <a href="https://github.com/Allaude">Github</a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/lorenzogm/">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/muhamad-riyan/">LinkedIn</a>
         </li>
       </ul>
     </nav>

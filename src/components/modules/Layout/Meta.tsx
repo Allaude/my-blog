@@ -9,7 +9,7 @@ export default function Meta(): ReactElement {
         content="Check out my personal website. There is not a lot, but very useful and nice!"
       />
 
-      <meta property="og:image" content="/og-image.png" />
+      <meta property="og:image" content="/samping.png" />
 
       <link
         rel="apple-touch-icon"
