@@ -25,12 +25,13 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "13.4.0",
     "@contentful/rich-text-types": "^14.1.1",
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@types/classnames": "^2.2.10",
     "classnames": "2.2.6",
     "contentful": "7.14.4",
     "date-fns": "2.10.0",
     "dotenv": "^8.2.0",
-    "next": "latest",
+    "next": "^10.0.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
